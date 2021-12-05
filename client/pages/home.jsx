@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react';
+import Select from 'react-select';
 
 export default function Home(props) {
   return (
@@ -9,7 +10,10 @@ export default function Home(props) {
           <div className="placeholder"></div>
           <div className="inputs">
             <Inputs />
-            <button>Submit</button>
+            <div className="row">
+              <button>Submit</button>
+              <MyComponent />
+            </div>
           </div>
         </div>
       </div>
@@ -59,3 +63,38 @@ function Inputs(props) {
     </form>
   );
 }
+
+function MyComponent() {
+  const [selectedOption, setSelectedOption] = useState({
+    value: 'javascript',
+    label: 'JavaScript'
+  });
+  const [handleChange] = useState(() => {
+    return () => {
+      setSelectedOption(selectedOption);
+    };
+  });
+  return (
+  <div>
+    <label>Technologies: </label>
+  <Select
+    defaultValue={[colourOptions[2]]}
+    isMulti
+    name="colors"
+    options={colourOptions}
+    className="basic-multi-select"
+    classNamePrefix="select"
+   onChange={handleChange} />
+  </div>
+  );
+}
+
+const colourOptions = [
+  { value: 'HTML', label: 'HTML', color: '#00B8D9', isFixed: true },
+  { value: 'CSS', label: 'CSS', color: '#0052CC', disabled: true },
+  { value: 'JavaScript', label: 'JavaScript', color: '#5243AA' },
+  { value: 'React', label: 'React', color: '#FF5630', isFixed: true },
+  { value: 'Express', label: 'Express', color: '#FF8B00' },
+  { value: 'Node.js', label: 'Node.js', color: '#FF8B00' },
+  { value: 'PostgreSql', label: 'PostgreSql', color: '#FF8B00' }
+];

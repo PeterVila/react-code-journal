@@ -1,6 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0 auto;
+}
+
+body {
+  background-color: #f6fff8;
+  font-family: "PT Sans", sans-serif;
 }
 
 .hidden {
@@ -61,11 +68,5 @@
 
   .column-half {
     width: 50%;
-  }
-
-  .memory-form {
-    padding: 0 5rem;
-    height: 35rem;
-    margin-top: 1.25rem;
   }
 }

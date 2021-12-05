@@ -2,8 +2,14 @@
   margin-left: 8rem;
 }
 
+.entry-page button {
+  height: 3rem;
+  width: 6rem;
+  align-self: center;
+}
+
 .container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .placeholder,
@@ -20,6 +26,8 @@ form input,
 textarea {
   width: 100%;
   margin: 0.5rem 0;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 form label {
