@@ -11,7 +11,7 @@ export default function Home(props) {
           <div className="inputs">
             <Inputs />
             <div className="row">
-              <button>Submit</button>
+              <button onClick={handleSubmit}>Submit</button>
               <MyComponent />
             </div>
           </div>
@@ -48,6 +48,11 @@ const reducer = (state, action) => {
   }
 };
 
+function handleSubmit() {
+  const technologies = document.querySelectorAll('.select__multi-value__label');
+  const techText = [...technologies].map(technology => technology.textContent);
+  console.log(techText);
+}
 function Inputs(props) {
   const [state, dispatch] = useReducer(reducer, {});
   return (
@@ -65,15 +70,6 @@ function Inputs(props) {
 }
 
 function MyComponent() {
-  const [selectedOption, setSelectedOption] = useState({
-    value: 'javascript',
-    label: 'JavaScript'
-  });
-  const [handleChange] = useState(() => {
-    return () => {
-      setSelectedOption(selectedOption);
-    };
-  });
   return (
   <div>
     <label>Technologies: </label>
@@ -84,7 +80,7 @@ function MyComponent() {
     options={colourOptions}
     className="basic-multi-select"
     classNamePrefix="select"
-   onChange={handleChange} />
+   onChange={null} />
   </div>
   );
 }
@@ -98,3 +94,5 @@ const colourOptions = [
   { value: 'Node.js', label: 'Node.js', color: '#FF8B00' },
   { value: 'PostgreSql', label: 'PostgreSql', color: '#FF8B00' }
 ];
+
+
