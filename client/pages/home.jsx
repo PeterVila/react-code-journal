@@ -1,19 +1,18 @@
 import React, { useState, useReducer } from 'react';
 import Select from 'react-select';
 
-export default function Home(props) {
+export default function Home() {
+  const [link, setLink] = useState('');
   return (
     <div className="entry-page">
       <h1>New Entry</h1>
       <div className="container">
         <div className="row">
-          <div className="placeholder"></div>
+          <div className="placeholder">
+            <img src={link}/>
+          </div>
           <div className="inputs">
-            <Inputs />
-            <div className="row">
-              <button onClick={handleSubmit}>Submit</button>
-              <MyComponent />
-            </div>
+            <Inputs setLink={setLink}/>
           </div>
         </div>
       </div>
@@ -53,7 +52,8 @@ function handleSubmit() {
   const techText = [...technologies].map(technology => technology.textContent);
   console.log(techText);
 }
-function Inputs(props) {
+
+function Inputs({ setLink }) {
   const [state, dispatch] = useReducer(reducer, {});
   return (
     <form>
@@ -62,9 +62,13 @@ function Inputs(props) {
       <label>Link</label>
       <input type="text" onChange={() => { dispatch({ type: 'link', Link: event.target.value }); }}>{state.link}</input>
       <label>Image Upload</label>
-      <input type="text" onChange={() => { dispatch({ type: 'image', Image: event.target.value }); }}>{state.image}</input>
+      <input type="text" onChange={event => { dispatch({ type: 'image', Image: event.target.value }); setLink(event.target.value); }}>{state.image}</input>
       <label>Description</label>
       <textarea onChange={() => { dispatch({ type: 'description', Description: event.target.value }); }}>{state.description}</textarea>
+      <div className="row">
+        <button onClick={handleSubmit}>Submit</button>
+        <MyComponent/>
+      </div>
     </form>
   );
 }
@@ -94,5 +98,3 @@ const colourOptions = [
   { value: 'Node.js', label: 'Node.js', color: '#FF8B00' },
   { value: 'PostgreSql', label: 'PostgreSql', color: '#FF8B00' }
 ];
-
-

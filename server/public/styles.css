@@ -13,7 +13,8 @@
 }
 
 .placeholder,
-.inputs {
+.inputs,
+.placeholder img {
   height: 450px;
   width: 450px;
 }
