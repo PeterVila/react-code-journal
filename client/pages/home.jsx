@@ -47,16 +47,23 @@ const reducer = (state, action) => {
   }
 };
 
-function handleSubmit() {
+function handleSubmit(state) {
+  event.preventDefault();
   const technologies = document.querySelectorAll('.select__multi-value__label');
   const techText = [...technologies].map(technology => technology.textContent);
-  console.log(techText);
+  console.log({
+    title: state.title,
+    link: state.Link,
+    image: state.Image,
+    description: state.Description,
+    technologies: techText.join(', ')
+  });
 }
 
 function Inputs({ setLink }) {
   const [state, dispatch] = useReducer(reducer, {});
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>Title</label>
       <input type="text" onChange={event => { dispatch({ type: 'title', Title: event.target.value }); }}>{state.title}</input>
       <label>Link</label>
@@ -66,7 +73,7 @@ function Inputs({ setLink }) {
       <label>Description</label>
       <textarea onChange={() => { dispatch({ type: 'description', Description: event.target.value }); }}>{state.description}</textarea>
       <div className="row">
-        <button onClick={handleSubmit}>Submit</button>
+        <button onClick={() => handleSubmit(state)}>Submit</button>
         <MyComponent/>
       </div>
     </form>
