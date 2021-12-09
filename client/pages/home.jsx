@@ -52,12 +52,31 @@ function handleSubmit(state) {
   const technologies = document.querySelectorAll('.select__multi-value__label');
   const techText = [...technologies].map(technology => technology.textContent);
   console.log({
-    title: state.title,
+    title: state.Title,
     link: state.Link,
     image: state.Image,
     description: state.Description,
     technologies: techText.join(', ')
   });
+  const obj = {
+    title: state.Title,
+    link: state.Link,
+    image: state.Image,
+    description: state.Description,
+    technologies: techText.join(', ')
+  };
+  console.log('obj:', obj);
+  fetch('/api/entries', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(obj)
+  })
+    .then(response => response.json())
+    .catch(error => {
+      throw error;
+    });
 }
 
 function Inputs({ setLink }) {
