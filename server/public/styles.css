@@ -41,3 +41,41 @@ form label {
 textarea {
   height: 10rem;
 }
+
+.entry {
+  display: flex;
+  border: 1px solid black;
+  margin: 1.5rem 0;
+}
+
+.entry img {
+  height: 500px;
+  width: 500px;
+  border-radius: 3rem;
+}
+
+.entry .data {
+  width: 55%;
+  border: 1px solid black;
+}
+
+.entry .data p,
+.entry .data h1 {
+  margin: 1rem auto;
+  border: 1px solid black;
+  width: 80%;
+}
+
+.data h1 {
+  color: rgb(5, 121, 5);
+}
+
+.data .link {
+  color: rgb(57, 165, 57);
+  font-size: 1.25rem;
+}
+
+.data .tech-logos {
+  width: 30px;
+  height: 30px;
+}
