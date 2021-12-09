@@ -5,7 +5,7 @@ export default function Home() {
   const [link, setLink] = useState('');
   return (
     <div className="entry-page">
-      <h1>New Entry</h1>
+      <h1 className="header">New Entry</h1>
       <div className="container">
         <div className="row">
           <div className="placeholder">

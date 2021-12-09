@@ -1,5 +1,7 @@
 .entry-page h1 {
-  margin-left: 8rem;
+  margin-left: 6rem;
+  color: rgb(5, 121, 5);
+  margin-bottom: 0.5rem;
 }
 
 .entry-page button {
@@ -17,6 +19,7 @@
 .placeholder img {
   height: 450px;
   width: 450px;
+  background-color: white;
 }
 
 .placeholder {
