@@ -1,0 +1,26 @@
+/* installed css-loader when creating bundle with webpack
+ */
+.navbar {
+  margin-bottom: 1rem;
+}
+
+.navbar .background {
+  background-color: #378b29;
+  background-image: linear-gradient(315deg, #378b29 0%, #74d680 74%);
+  box-shadow: -1px 7px 14px 3px rgba(0, 0, 0, 0.25);
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar input {
+  width: 30%;
+  height: 1.5rem;
+  border-radius: 1rem;
+  padding-left: 0.5rem;
+}
+
+.navbar h1, h2 {
+  color: #FFFFFF;
+  text-shadow: 4px 3px 0px rgb(48, 148, 72);
+}
