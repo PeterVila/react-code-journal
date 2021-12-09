@@ -31,7 +31,6 @@ app.get('/api/entries', (req, res, next) => {
 });
 
 app.post('/api/entries/', (req, res, next) => {
-  console.log(req.body);
   const {
     title,
     link,
@@ -40,7 +39,7 @@ app.post('/api/entries/', (req, res, next) => {
     technologies
   } = req.body;
   if (!title || !link || !image || !description || !technologies) {
-    throw new ClientError(400, 'postId and content');
+    throw new ClientError(400, 'All inputs should not be empty!');
   }
   const sql = `
     insert into "entries" ("title", "link", "image", "description", "technologies")
