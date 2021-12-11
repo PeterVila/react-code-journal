@@ -31,7 +31,7 @@ export default class Entries extends React.Component {
             <p className="link">{link}</p>
             <p>Description: {description}</p>
             <p>Technologies: {techArray.map((tech, i) => {
-              return <img className="tech-logos" key={i} src={`${tech}.jpg`}/>;
+              return <img className="tech-logos" key={i} src={`/${tech}.png`}/>;
             })}</p>
           </div>
         </div>
