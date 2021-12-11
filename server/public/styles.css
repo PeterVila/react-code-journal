@@ -19,7 +19,6 @@
 .placeholder img {
   height: 450px;
   width: 450px;
-  background-color: white;
 }
 
 .placeholder {
@@ -43,27 +42,29 @@ textarea {
 }
 
 .entry {
-  display: flex;
-  border: 1px solid black;
-  margin: 1.5rem 0;
+  margin: 1.5rem;
 }
 
-.entry img {
-  height: 500px;
-  width: 500px;
-  border-radius: 3rem;
+.entry .main-image {
+  width: 475px;
+  border-radius: .5rem;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.445);
 }
 
 .entry .data {
-  width: 55%;
-  border: 1px solid black;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.431);
+  width: 52.5%;
+  border-radius: .5rem;
+  background-color: rgb(255, 255, 255);
+  border: 1.5px solid rgb(15, 170, 15);
 }
 
 .entry .data p,
-.entry .data h1 {
+.entry .data h1,
+.entry .all-tech-logos {
   margin: 1rem auto;
-  border: 1px solid black;
-  width: 80%;
+  /* border: 1px solid black; */
+  width: 90%;
 }
 
 .data h1 {
@@ -76,6 +77,11 @@ textarea {
 }
 
 .data .tech-logos {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
+}
+
+.tech-header {
+  color: rgb(57, 165, 57);
+  font-size: 1.25rem;
 }

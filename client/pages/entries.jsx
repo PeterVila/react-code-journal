@@ -24,15 +24,16 @@ export default class Entries extends React.Component {
       const techArray = technologies.split(', ');
       console.log(techArray);
       return (
-        <div key={index} className="entry">
-          <img src={image}/>
+        <div key={index} className="entry row">
+          <img className="main-image"src={image}/>
           <div className="data">
             <h1>{title}</h1>
             <p className="link">{link}</p>
-            <p>Description: {description}</p>
-            <p>Technologies: {techArray.map((tech, i) => {
+            <p className="tech-description">{description}</p>
+            <p className="tech-header">Technologies: </p>
+            <div className="all-tech-logos">{techArray.map((tech, i) => {
               return <img className="tech-logos" key={i} src={`/${tech}.png`}/>;
-            })}</p>
+            })}</div>
           </div>
         </div>
       );
