@@ -19,7 +19,6 @@
 .placeholder img {
   height: 450px;
   width: 450px;
-  background-color: white;
 }
 
 .placeholder {
@@ -40,4 +39,49 @@ form label {
 
 textarea {
   height: 10rem;
+}
+
+.entry {
+  margin: 1.5rem;
+}
+
+.entry .main-image {
+  width: 475px;
+  border-radius: .5rem;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.445);
+}
+
+.entry .data {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.431);
+  width: 52.5%;
+  border-radius: .5rem;
+  background-color: rgb(255, 255, 255);
+  border: 1.5px solid rgb(15, 170, 15);
+}
+
+.entry .data p,
+.entry .data h1,
+.entry .all-tech-logos {
+  margin: 1rem auto;
+  /* border: 1px solid black; */
+  width: 90%;
+}
+
+.data h1 {
+  color: rgb(5, 121, 5);
+}
+
+.data .link {
+  color: rgb(57, 165, 57);
+  font-size: 1.25rem;
+}
+
+.data .tech-logos {
+  width: 50px;
+  height: 50px;
+}
+
+.tech-header {
+  color: rgb(57, 165, 57);
+  font-size: 1.25rem;
 }
