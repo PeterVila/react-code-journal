@@ -86,3 +86,17 @@ textarea {
   color: rgb(57, 165, 57);
   font-size: 1.25rem;
 }
+
+.entry-page,
+.entries {
+  margin-bottom: 5rem;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links:hover {
+  color: yellowgreen;
+}
