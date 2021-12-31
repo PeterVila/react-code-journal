@@ -31,7 +31,7 @@ export default class Entries extends React.Component {
             <p className="tech-description">{description}</p>
             <p className="tech-header">Technologies: </p>
             <div className="all-tech-logos">{techArray.map((tech, i) => {
-              return <img className="tech-logos" key={i} src={`/${tech}.png`}/>;
+              return <img className="tech-logos" key={i} src={`/${tech.toLowerCase()}.png`}/>;
             })}</div>
           </div>
         </div>
