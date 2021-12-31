@@ -22,7 +22,6 @@ export default class Entries extends React.Component {
     const entries = this.state.posts && this.state.posts.map((post, index) => {
       const { description, image, link, technologies, title, createdAt } = post;
       const techArray = technologies.split(', ');
-      console.log(techArray);
       return (
         <div key={index} className="entry row">
           <img className="main-image"src={image}/>

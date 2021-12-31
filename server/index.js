@@ -30,6 +30,39 @@ app.get('/api/entries', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/entries/:entryId', (req, res, next) => {
+  const entryId = Number(req.params.entryId);
+  const params = [entryId];
+  if (!Number.isInteger(entryId) || entryId <= 0) {
+    res.status(400).json({
+      error: '"gradeId" must be a positive integer'
+    });
+    return;
+  }
+  const sql = `
+  select *
+    from "entries"
+  where "entryId" = $1
+  `;
+  db.query(sql, params)
+    .then(result => {
+      const [entry] = result.rows;
+      if (!entry) {
+        res.status(404).json({
+          error: `cannot find todo with todoId ${entryId}`
+        });
+        return;
+      }
+      res.json(entry);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'an unexpected error occurred'
+      });
+    });
+});
+
 app.post('/api/entries/', (req, res, next) => {
   const {
     title,
